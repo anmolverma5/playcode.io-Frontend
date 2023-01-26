@@ -1,0 +1,25 @@
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #101e2a;
+    background-color: #101e2a;
+    margin-top: 20px;
+  }
+  .play_code{
+    padding-left: 10px;
+  }
+  
+footer {
+  background-color: #101e2a;
+}
+/* a.play_code {
+  color: #93a3bc !important;
+} */
+.col-6.col-md {
+  color: #93a3bc;
+}
+a {
+  text-decoration: dashed;
+  color: #93a3bc;
+}
