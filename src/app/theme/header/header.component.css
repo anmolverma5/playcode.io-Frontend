@@ -1,4 +1,4 @@
-.right-hand-side {
+/* .right-hand-side {
   display: flex;
   flex-direction: row-reverse;
 }
@@ -23,18 +23,15 @@ b.hilighted_two {
   color: #f37575;
 }
 .topnav a:hover {
-  /* background-color: #ddd; */
   color: #56a51b;
 }
 
 .topnav a.active {
   filter: brightness(85%);
-  /* background-color: #04AA6D; */
-  /* color: white; */
 }
 .icon {
   color: #04aa6d;
 }
 .icon_modified {
   color: #72a24d !important;
-}
+} */
