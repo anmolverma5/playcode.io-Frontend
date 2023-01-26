@@ -38654,3 +38654,6 @@ a {
 .cursor-pointer.text-warning-1-hover-warning-2:focus, .cursor-pointer.text-warning-1-hover-warning-2:hover, .text-warning-2, .text-warning-2-hover-static-white, a.text-warning-1-hover-warning-2:focus, a.text-warning-1-hover-warning-2:hover {
     color: #efa00f!important;
 }
+.text-danger-2, .text-danger-2-hover-static-white {
+  color: var(--pc-danger_2)!important;
+}
