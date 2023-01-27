@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppStateService } from 'src/app/shared/app-state.service';
 
 @Component({
   selector: 'app-pricing',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./pricing.component.css']
 })
 export class PricingComponent {
-
+  constructor(public appStateSvc: AppStateService){
+  
+  }
 }

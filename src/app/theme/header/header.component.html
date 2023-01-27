@@ -162,16 +162,14 @@
       <a
         routerLink="pricing"
         class="ml-3 cursor-pointer text-text-2-hover-primary-1 text-nodecor"
-        data-v-749161c4=""
-      >
+        [hidden]="showPricing"      >
         Pricing
       </a>
-      <div
-        class="ml-3 d-flex align-items-center text-text-3-hover-primary-1 cursor-pointer py-1"
-        data-v-50bb4c39=""
-      >
-        Settings
-      </div>
+      <a
+      class="ml-3 cursor-pointer text-text-2-hover-primary-1 text-nodecor"
+      [hidden]="showSettings"      >
+      Settings
+    </a>
       <a
         aria-current="page"
         routerLink="learn"
