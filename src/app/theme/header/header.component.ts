@@ -12,7 +12,6 @@ export class HeaderComponent {
   showSettings: boolean = true;
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
     public appStateSvc: AppStateService,
   ){
   this.router.events.subscribe((evt) => {

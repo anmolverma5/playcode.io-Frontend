@@ -5,13 +5,15 @@ import { ThemeRoutingModule } from './theme-routing.module';
 import { LayoutComponent } from './layout/layout.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { HeaderSignupComponent } from './header-signup/header-signup.component';
 
 
 @NgModule({
   declarations: [
     LayoutComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    HeaderSignupComponent
   ],
   imports: [
     CommonModule,

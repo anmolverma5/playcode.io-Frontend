@@ -1,3 +1,4 @@
-<app-header></app-header>
+<app-header-signup *ngIf="signUp"></app-header-signup>
+<app-header *ngIf="!signUp"></app-header>
 <router-outlet></router-outlet>
-<app-footer></app-footer>
+<app-footer *ngIf="!signUp"></app-footer>

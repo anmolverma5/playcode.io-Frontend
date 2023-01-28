@@ -1,0 +1,63 @@
+.header[data-v-4494295d] {
+    height: 46px;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+    -webkit-app-region: drag
+}
+
+.header[data-v-4494295d],
+.header_back[data-v-4494295d] {
+    display: flex;
+    align-items: center
+}
+
+.header_back[data-v-4494295d] {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    z-index: 6
+}
+
+.header_back_ic[data-v-4494295d] {
+    height: 12px;
+    width: 12px;
+    margin-left: 12px
+}
+
+.header_back_name[data-v-4494295d] {
+    padding: 0 0 0 9px;
+    text-transform: capitalize
+}
+
+.header_back[data-v-4494295d]:hover {
+    cursor: pointer;
+    color: var(--pc-text_1)
+}
+
+.header_t[data-v-4494295d] {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: default;
+    height: auto;
+    color: var(--pc-text_2)
+}
+
+.header.__transparent[data-v-4494295d] {
+    background: transparent;
+    border: none
+}
+
+.header.__absolute[data-v-4494295d] {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0
+}
+
+.electron .header_back[data-v-4494295d] {
+    left: 56px
+}

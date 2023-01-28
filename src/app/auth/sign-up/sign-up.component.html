@@ -1,0 +1,124 @@
+<div class="scrollbar ps">
+    <div class="container-fluid max-w-350">
+        <div class="row mt-10 mb-3">
+            <div class="col-sm-24">
+                <div class="sign-in">
+                    <div *ngIf="isLoginForm">
+                        <div class="font-size-22 font-weight-600"> Create a PlayCode account </div>
+                        <div class="mt-3"> Have an account? <span class="text-primary-2-hover-primary-1 cursor-pointer"
+                                (click)="isLogin()">Log in</span>
+                        </div>
+                    </div>
+                    <div *ngIf="!isLoginForm">
+                        <div class="font-size-22 font-weight-600"> Log In </div>
+                        <div class="mt-3"> Does not haave an account? <span
+                                class="text-primary-2-hover-primary-1 cursor-pointer" (click)="isLogin()">Sign
+                                up.</span>
+                        </div>
+                    </div>
+
+                    <!---->
+                    <div class="mt-8 d-flex justify-content-center">
+                        <asl-google-signin-button (click)="loginWithGoogle()" type="standard" size="large">
+                        </asl-google-signin-button>
+                        <!---->
+                    </div>
+                    <div *ngIf="!isLoginFormEnable" class="mt-2 d-flex justify-content-center"><button
+                            (click)="isLoginFormEnable =true"
+                            class="el-button el-button--default el-button--large sign-in-email w-100 max-w-300"
+                            aria-disabled="false" type="button">
+                            <!--v-if--><span class="">
+                                <div class="email-logo"><i class="el-icon" style="font-size: 20px;"><svg
+                                            viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill="currentColor"
+                                                d="M128 224v512a64 64 0 0 0 64 64h640a64 64 0 0 0 64-64V224H128zm0-64h768a64 64 0 0 1 64 64v512a128 128 0 0 1-128 128H192A128 128 0 0 1 64 736V224a64 64 0 0 1 64-64z">
+                                            </path>
+                                            <path fill="currentColor"
+                                                d="M904 224 656.512 506.88a192 192 0 0 1-289.024 0L120 224h784zm-698.944 0 210.56 240.704a128 128 0 0 0 192.704 0L818.944 224H205.056z">
+                                            </path>
+                                        </svg></i></div>
+                                <div>Continue with email</div>
+                            </span>
+
+                        </button>
+                    </div>
+                    <div *ngIf="isLoginFormEnable" class="d-flex justify-content-center">
+                        <hr class="my-5 mx-2 bg-bg-3">
+                    </div>
+                    <div *ngIf="isLoginFormEnable" class="d-flex justify-content-center">
+                        <div class="sign-in-email w-100 max-w-300">
+                            <div class="d-flex justify-content-center">
+                                <div class="w-100">
+                                    <form (submit)="onSubmit()" [formGroup]="loginForm"
+                                        class="el-form el-form--default el-form--label-right mb-0">
+                                        <div
+                                            class="font-weight-600 font-size-10 text-text-3 text-uppercase text-left cursor-default">
+                                            Email </div>
+                                        <div class="el-form-item is-required is-no-asterisk asterisk-left mb-0">
+                                            <div class="el-form-item__content">
+                                                <div class="el-input el-input--default el-input--suffix mt-0_5">
+
+                                                    <div class="el-input__wrapper">
+                                                        <input formControlName="email" class="el-input__inner"
+                                                            name="email" type="email" autocomplete="off" tabindex="0"
+                                                            placeholder="Your email address..." id="el-id-1707-13">
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <button class="el-button el-button--primary el-button--default  is-plain mt-2 w-100"
+                                        aria-disabled="true" [ngClass]="!loginForm.valid ? 'is-disabled' : ''"
+                                        type="button">
+                                        <!--v-if--><span class="">Continue with Email </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!---->
+                    <div style="line-height: 1.5em;">
+                        <div class="mt-3 text-text-2 text-break-word"> You can also continue with <a
+                                href="https://playcode.io/oauth/github?next=%2Fsign-up"
+                                class="sign-in-github cursor-pointer">GitHub</a> or <a
+                                href="https://playcode.io/oauth/microsoft?next=%2Fsign-up"
+                                class="sign-in-microsoft cursor-pointer">Microsoft</a></div>
+                        <!---->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+        <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+    </div>
+    <div class="ps__rail-y" style="top: 0px; right: 0px;">
+        <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="container" style="max-width: 550px">
+    <div *ngIf="isLoggedin === true">
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" [value]="socialUser.firstName" id="firstname" readonly>
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" [value]="socialUser.lastName" id="lastname" readonly>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" [value]="socialUser.email" id="email" readonly>
+        </div>
+        <button type="button" (click)="logOut()" class="btn btn-primary">Log Out</button>
+    </div>
+</div>

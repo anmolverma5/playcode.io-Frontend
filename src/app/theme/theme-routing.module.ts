@@ -23,6 +23,10 @@ const routes: Routes = [
       {
         path: 'pricing',
         loadChildren: () => import('../pricing/pricing.module').then((m)=>m.PricingModule)
+      },
+      {
+        path: 'sign-up',
+        loadChildren: () => import('../auth/auth.module').then((m)=>m.AuthModule)
       }
     ]
   }
