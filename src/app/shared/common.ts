@@ -1,5 +1,8 @@
-export class StateData{
+export class StateData {
     userData: any;
-    constructor(){
+    loginSignUpForm: boolean;
+    constructor() {
+        this.userData = [];
+        this.loginSignUpForm = false;
     }
 }
