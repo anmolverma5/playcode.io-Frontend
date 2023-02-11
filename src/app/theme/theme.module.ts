@@ -6,6 +6,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HeaderSignupComponent } from './header-signup/header-signup.component';
+import { DashboardLayoutComponent } from './dashboard-layout/dashboard-layout.component';
+import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.component';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { HeaderSignupComponent } from './header-signup/header-signup.component';
     LayoutComponent,
     FooterComponent,
     HeaderComponent,
-    HeaderSignupComponent
+    HeaderSignupComponent,
+    DashboardLayoutComponent,
+    DashboardHeaderComponent
   ],
   imports: [
     CommonModule,

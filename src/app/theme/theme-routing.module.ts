@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
+import { AuthGuard } from '../shared/auth.guard';
+import { DashboardLayoutComponent } from './dashboard-layout/dashboard-layout.component';
 
 const routes: Routes = [
   {
@@ -9,24 +11,36 @@ const routes: Routes = [
     children: [
       {
         path: '',
-				redirectTo: 'home',
-				pathMatch: 'full',
+        redirectTo: 'home',
+        pathMatch: 'full',
       },
       {
         path: '',
-        loadChildren: () => import('../home/home.module').then((m)=>m.HomeModule)
+        loadChildren: () => import('../home/home.module').then((m) => m.HomeModule)
       },
       {
         path: 'learn',
-        loadChildren: () => import('../learn/learn.module').then((m)=>m.LearnModule)
+        loadChildren: () => import('../learn/learn.module').then((m) => m.LearnModule)
       },
       {
         path: 'pricing',
-        loadChildren: () => import('../pricing/pricing.module').then((m)=>m.PricingModule)
+        loadChildren: () => import('../pricing/pricing.module').then((m) => m.PricingModule)
       },
       {
         path: 'sign-up',
-        loadChildren: () => import('../auth/auth.module').then((m)=>m.AuthModule)
+        loadChildren: () => import('../auth/auth.module').then((m) => m.AuthModule),
+      }
+
+    ]
+  },
+  {
+    path: "",
+    component: DashboardLayoutComponent,
+    children: [
+      {
+        path: 'dashboard',
+        canActivate: [AuthGuard],
+        loadChildren: () => import('../dashboard/dashboard.module').then((m) => m.DashboardModule)
       }
     ]
   }

@@ -68,12 +68,34 @@
 
                                             </div>
                                         </div>
+                                        <button
+                                            class="el-button el-button--primary el-button--default  is-plain mt-2 w-100"
+                                            aria-disabled="true" *ngIf="!codeSendSuccessfully"
+                                            [ngClass]="!loginForm.valid ? 'is-disabled' : ''" type="submit">
+                                            <span class="">Continue with Email </span>
+                                        </button>
                                     </form>
-                                    <button class="el-button el-button--primary el-button--default  is-plain mt-2 w-100"
-                                        aria-disabled="true" [ngClass]="!loginForm.valid ? 'is-disabled' : ''"
-                                        type="button">
-                                        <!--v-if--><span class="">Continue with Email </span>
-                                    </button>
+                                    <ng-container *ngIf="codeSendSuccessfully">
+                                        <div class="text-text-2 mt-1"> We sent you a temporary
+                                            login code. Please check your inbox. </div>
+                                        <form (submit)="onSubmit()" [formGroup]="loginCodeForm">
+                                            <div class="el-input el-input--default el-input--suffix mt-3 mb-2">
+                                                <div class="el-input__wrapper">
+                                                    <input formControlName="loginCode" mask="000-000"
+                                                        [showMaskTyped]="true" class="el-input__inner" name="code"
+                                                        type="text" autocomplete="off" tabindex="0" id="el-id-9881-14">
+                                                </div>
+                                                <!-- placeholder="Paste login code" -->
+                                            </div>
+                                            <!-- -->
+                                            <button
+                                                class="el-button el-button--primary el-button--default is-plain mt-2 w-100"
+                                                aria-disabled="true"
+                                                [ngClass]="!loginCodeForm.valid ? 'is-disabled' : ''" type="submit">
+                                                <!--v-if--><span class="">Continue with Code </span>
+                                            </button>
+                                        </form>
+                                    </ng-container>
                                 </div>
                             </div>
                         </div>

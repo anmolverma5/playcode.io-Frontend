@@ -5,8 +5,11 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
+import { IConfig, NgxMaskDirective, NgxMaskPipe, provideEnvironmentNgxMask } from 'ngx-mask';
 
-
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 @NgModule({
   declarations: [
     SignUpComponent
@@ -16,8 +19,12 @@ import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 
     AuthRoutingModule,
     ReactiveFormsModule,
     SocialLoginModule,
+    NgxMaskDirective,
+    NgxMaskPipe
   ],
   providers: [
+    provideEnvironmentNgxMask(),
+    provideEnvironmentNgxMask(maskConfig),
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
